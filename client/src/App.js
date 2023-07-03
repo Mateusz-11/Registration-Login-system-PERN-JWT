@@ -3,7 +3,6 @@ import "./App.css";
 import {
 	BrowserRouter as Router,
 	Route,
-	Redirect,
 	Routes,
 	Navigate,
 } from "react-router-dom";
