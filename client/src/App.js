@@ -23,8 +23,8 @@ function App() {
 
 			parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
 
-			console.log("test parse");
-			console.log(parseRes);
+			// console.log(`parseRes: ${parseRes}`);
+			// console.log(parseRes);
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -39,6 +39,7 @@ function App() {
 	const setAuth = (boolean) => {
 		setIsAuthenticated(boolean);
 	};
+	// console.log(`isAuthenticated: ${isAuthenticated}`);
 
 	return (
 		<>
