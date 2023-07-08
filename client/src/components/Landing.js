@@ -9,7 +9,7 @@ const Landing = () => {
 			<Link to='/login' className='btn btn-primary'>
 				Login
 			</Link>
-			<Link to='/register' className='btn btn-primary ml-3'>
+			<Link to='/register' className='btn btn-primary ms-3'>
 				Register
 			</Link>
 		</div>

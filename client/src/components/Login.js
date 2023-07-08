@@ -1,7 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
-
-// import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Login = ({ setAuth }) => {
 	const [inputs, setInputs] = useState({

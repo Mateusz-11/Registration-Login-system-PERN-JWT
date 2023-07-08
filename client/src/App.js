@@ -10,6 +10,7 @@ import {
 import Dashboard from "./components/dashboard/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Landing from "./components/Landing";
 
 function App() {
 	const checkAuthenticated = async () => {
@@ -46,6 +47,12 @@ function App() {
 			<Router>
 				<div className='container'>
 					<Routes>
+						<Route
+							path='/'
+							element={
+								!isAuthenticated ? <Landing /> : <Navigate to='/dashboard' />
+							}
+						/>
 						<Route
 							path='/login'
 							element={
