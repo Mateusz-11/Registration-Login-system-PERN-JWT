@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import EditTodo from "./EditTodo";
 
 const ListTodos = ({ allTodos, setTodosChange }) => {
-	console.log(allTodos);
+	// console.log(allTodos);
 	const [todos, setTodos] = useState([]); //empty array
 
 	//delete todo function
@@ -24,7 +24,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 		setTodos(allTodos);
 	}, [allTodos]);
 
-	console.log(todos);
+	// console.log(todos);
 
 	return (
 		<>

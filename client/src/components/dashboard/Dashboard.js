@@ -18,7 +18,7 @@ const Dashboard = ({ setAuth }) => {
 			});
 
 			const parseData = await res.json();
-			console.log(parseData[0].user_name);
+			// console.log(parseData[0].user_name);
 			setAlTtodos(parseData);
 
 			setName(parseData[0].user_name);
@@ -32,7 +32,6 @@ const Dashboard = ({ setAuth }) => {
 		try {
 			localStorage.removeItem("token");
 			setAuth(false);
-			// toast.success("Logout successfully");
 		} catch (err) {
 			console.error(err.message);
 		}
