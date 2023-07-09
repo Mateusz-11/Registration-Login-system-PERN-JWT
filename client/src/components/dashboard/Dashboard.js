@@ -21,7 +21,7 @@ const Dashboard = ({ setAuth }) => {
 			console.log(parseData[0].user_name);
 			setAlTtodos(parseData);
 
-			setName(parseData.user_name);
+			setName(parseData[0].user_name);
 		} catch (err) {
 			console.error(err.message);
 		}
