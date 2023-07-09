@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = ({ setAuth }) => {
@@ -29,10 +29,8 @@ const Login = ({ setAuth }) => {
 			if (parseRes.jwtToken) {
 				localStorage.setItem("token", parseRes.jwtToken);
 				setAuth(true);
-				// toast.success("Logged in Successfully");
 			} else {
 				setAuth(false);
-				// toast.error(parseRes);
 			}
 		} catch (err) {
 			console.error(err.message);
@@ -40,7 +38,7 @@ const Login = ({ setAuth }) => {
 	};
 
 	return (
-		<Fragment>
+		<>
 			<h1 className='mt-5 text-center'>Login</h1>
 			<form onSubmit={onSubmitForm}>
 				<input
@@ -60,7 +58,7 @@ const Login = ({ setAuth }) => {
 				<button className='btn btn-success btn-block'>Submit</button>
 			</form>
 			<Link to='/register'>register</Link>
-		</Fragment>
+		</>
 	);
 };
 

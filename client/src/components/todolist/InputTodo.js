@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 const InputTodo = ({ setTodosChange }) => {
 	const [description, setDescription] = useState("");
@@ -29,7 +29,7 @@ const InputTodo = ({ setTodosChange }) => {
 		}
 	};
 	return (
-		<Fragment>
+		<>
 			<h1 className='text-center my-5'>Input Todo</h1>
 			<form className='d-flex' onSubmit={onSubmitForm}>
 				<input
@@ -41,7 +41,7 @@ const InputTodo = ({ setTodosChange }) => {
 				/>
 				<button className='btn btn-success '>Add</button>
 			</form>
-		</Fragment>
+		</>
 	);
 };
 

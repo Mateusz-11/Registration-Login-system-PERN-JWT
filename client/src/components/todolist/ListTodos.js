@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import EditTodo from "./EditTodo";
 
 const ListTodos = ({ allTodos, setTodosChange }) => {
@@ -20,14 +20,6 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 		}
 	}
 
-	// async function getTodos() {
-	//   const res = await fetch("http://localhost:5000/todos");
-
-	//   const todoArray = await res.json();
-
-	//   setTodos(todoArray);
-	// }
-
 	useEffect(() => {
 		setTodos(allTodos);
 	}, [allTodos]);
@@ -35,7 +27,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 	console.log(todos);
 
 	return (
-		<Fragment>
+		<>
 			<table className='table mt-5'>
 				<thead>
 					<tr>
@@ -45,12 +37,6 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{/*<tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */}
-
 					{todos.length !== 0 &&
 						todos[0].todo_id !== null &&
 						todos.map((todo) => (
@@ -70,7 +56,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 						))}
 				</tbody>
 			</table>
-		</Fragment>
+		</>
 	);
 };
 

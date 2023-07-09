@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
 const EditTodo = ({ todo, setTodosChange }) => {
 	//editText function
@@ -26,7 +26,7 @@ const EditTodo = ({ todo, setTodosChange }) => {
 
 	const [description, setDescription] = useState(todo.description);
 	return (
-		<Fragment>
+		<>
 			<button
 				type='button'
 				className='btn btn-warning'
@@ -34,7 +34,6 @@ const EditTodo = ({ todo, setTodosChange }) => {
 				data-bs-target={`#id${todo.todo_id}`}>
 				Edit
 			</button>
-			{/* id = "id21"*/}
 			<div
 				className='modal fade'
 				id={`id${todo.todo_id}`}
@@ -80,7 +79,7 @@ const EditTodo = ({ todo, setTodosChange }) => {
 					</div>
 				</div>
 			</div>
-		</Fragment>
+		</>
 	);
 };
 
