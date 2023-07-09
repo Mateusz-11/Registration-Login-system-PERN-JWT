@@ -10,7 +10,7 @@ const EditTodo = ({ todo, setTodosChange }) => {
 			const myHeaders = new Headers();
 
 			myHeaders.append("Content-Type", "application/json");
-			myHeaders.append("jwt_token", localStorage.token);
+			myHeaders.append("token", localStorage.token);
 
 			await fetch(`http://localhost:5000/dashboard/todos/${id}`, {
 				method: "PUT",
@@ -19,8 +19,6 @@ const EditTodo = ({ todo, setTodosChange }) => {
 			});
 
 			setTodosChange(true);
-
-			// window.location = "/";
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -32,13 +30,13 @@ const EditTodo = ({ todo, setTodosChange }) => {
 			<button
 				type='button'
 				className='btn btn-warning'
-				data-toggle='modal'
-				data-target={`#id${todo.todo_id}`}>
+				data-bs-toggle='modal'
+				data-bs-target={`#id${todo.todo_id}`}>
 				Edit
 			</button>
 			{/* id = "id21"*/}
 			<div
-				className='modal'
+				className='modal fade'
 				id={`id${todo.todo_id}`}
 				onClick={() => setDescription(todo.description)}>
 				<div className='modal-dialog'>
@@ -67,14 +65,14 @@ const EditTodo = ({ todo, setTodosChange }) => {
 							<button
 								type='button'
 								className='btn btn-warning'
-								data-dismiss='modal'
+								data-bs-dismiss='modal'
 								onClick={() => editText(todo.todo_id)}>
 								Edit
 							</button>
 							<button
 								type='button'
 								className='btn btn-danger'
-								data-dismiss='modal'
+								data-bs-dismiss='modal'
 								onClick={() => setDescription(todo.description)}>
 								Close
 							</button>
