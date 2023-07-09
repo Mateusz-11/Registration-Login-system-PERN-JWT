@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 //components
 
 import InputTodo from "../todolist/InputTodo";
-// import ListTodos from "./todolist/ListTodos";
+import ListTodos from "../todolist/ListTodos";
 
 const Dashboard = ({ setAuth }) => {
 	const [name, setName] = useState("");
+	const [allTodos, setAlTtodos] = useState([]);
+	const [todosChange, setTodosChange] = useState(false);
 
 	const getProfile = async () => {
 		try {
@@ -16,6 +18,9 @@ const Dashboard = ({ setAuth }) => {
 			});
 
 			const parseData = await res.json();
+			console.log(parseData[0].user_name);
+			setAlTtodos(parseData);
+
 			setName(parseData.user_name);
 		} catch (err) {
 			console.error(err.message);
@@ -35,7 +40,8 @@ const Dashboard = ({ setAuth }) => {
 
 	useEffect(() => {
 		getProfile();
-	}, []);
+		setTodosChange(false);
+	}, [todosChange]);
 
 	return (
 		<div>
@@ -45,7 +51,8 @@ const Dashboard = ({ setAuth }) => {
 					Logout
 				</button>
 			</div>
-			<InputTodo />
+			<InputTodo setTodosChange={setTodosChange} />
+			<ListTodos allTodos={allTodos} />
 		</div>
 	);
 };

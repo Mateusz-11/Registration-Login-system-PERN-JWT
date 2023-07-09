@@ -27,7 +27,7 @@ const InputTodo = ({ setTodosChange }) => {
 		} catch (err) {
 			console.error(err.message);
 		}
-	};
+	}; 
 	return (
 		<Fragment>
 			<h1 className='text-center my-5'>Input Todo</h1>
