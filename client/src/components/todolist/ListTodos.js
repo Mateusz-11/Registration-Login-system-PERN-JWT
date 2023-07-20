@@ -17,7 +17,6 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 			setTodos(todos.filter((todo) => todo.todo_id !== id));
 		} catch (err) {
 			console.error(err.message);
-			console.error(err.message);
 		}
 	}
 
