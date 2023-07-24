@@ -28,6 +28,7 @@ const ListTodos = ({ allTodos, setTodosChange }) => {
 
 	return (
 		<>
+			<h2>List of todos</h2>
 			<table className='table mt-5'>
 				<thead>
 					<tr>
